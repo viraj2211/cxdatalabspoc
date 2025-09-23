@@ -1,0 +1,9 @@
+{
+	"name": "rambantu2211",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4929423f-fa21-4e22-a93a-1c3af147f5bd",
+		"tenantId": "39ffbbac-9f45-4754-a3dd-fed9c2740104"
+	}
+}
