@@ -40,6 +40,9 @@
 				},
 				{
 					"name": "filter1"
+				},
+				{
+					"name": "filter2"
 				}
 			],
 			"scriptLines": [
@@ -65,8 +68,8 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> source2",
-				"cast1, source2 join(cast1@emp_id == source2@emp_id,",
-				"     joinType:'inner',",
+				"cast1, filter2 join(cast1@emp_id == source2@emp_id,",
+				"     joinType:'outer',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
@@ -78,6 +81,8 @@
 				") ~> derivedColumn1",
 				"source1 filter(emp_id != 'emp_id' && !isNull(emp_id)\r",
 				") ~> filter1",
+				"source2 filter(emp_id != 'emp_id' && !isNull(emp_id)\r",
+				") ~> filter2",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
