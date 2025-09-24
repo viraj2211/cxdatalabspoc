@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "rambantu2211"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"Source_emp_accountKey": {
+			"value": ""
+		},
+		"Target1_csv_accountKey": {
+			"value": ""
+		},
+		"dept_data_parquet_accountKey": {
+			"value": ""
+		},
+		"source1_csv_accountKey": {
+			"value": ""
+		},
+		"source2_accountKey": {
+			"value": ""
+		},
+		"target _emp_data_csv_accountKey": {
+			"value": ""
+		},
+		"targetpoc_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"Source_emp_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"Target1_csv_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"dept_data_parquet_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"source1_csv_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"source2_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"target _emp_data_csv_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		},
+		"targetpoc_properties_typeProperties_url": {
+			"value": "https://pavanadls.dfs.core.windows.net/"
+		}
+	}
+}
