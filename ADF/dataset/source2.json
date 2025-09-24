@@ -1,0 +1,41 @@
+{
+	"name": "source2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "poc/dept_data",
+				"fileSystem": "cxdatalabspoc"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "emp_id",
+				"type": "INT32"
+			},
+			{
+				"name": "emp_name",
+				"type": "UTF8"
+			},
+			{
+				"name": "job_role",
+				"type": "UTF8"
+			},
+			{
+				"name": "salary",
+				"type": "INT32"
+			},
+			{
+				"name": "hire_date",
+				"type": "DATE"
+			}
+		]
+	}
+}
