@@ -81,7 +81,7 @@
 				") ~> derivedColumn1",
 				"source1 filter(emp_id != 'emp_id' && !isNull(emp_id)\r",
 				") ~> filter1",
-				"source2 filter(emp_id != 'emp_id' && !isNull(emp_id)\r",
+				"source2 filter(source2.emp_id != 'emp_id' && !isNull(emp_id)",
 				") ~> filter2",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
