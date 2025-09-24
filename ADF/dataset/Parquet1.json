@@ -1,0 +1,39 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "emp_id",
+				"type": "INT32"
+			},
+			{
+				"name": "emp_name",
+				"type": "UTF8"
+			},
+			{
+				"name": "job_role",
+				"type": "UTF8"
+			},
+			{
+				"name": "salary",
+				"type": "INT32"
+			},
+			{
+				"name": "hire_date",
+				"type": "DATE"
+			}
+		]
+	}
+}
