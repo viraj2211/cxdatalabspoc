@@ -1,0 +1,44 @@
+{
+	"name": "emppoc_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Source_emp",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "poc/emp_data",
+				"fileSystem": "cxdatalabspoc"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "emp_id",
+				"type": "String"
+			},
+			{
+				"name": "emp_name",
+				"type": "String"
+			},
+			{
+				"name": "job_role",
+				"type": "String"
+			},
+			{
+				"name": "salary",
+				"type": "String"
+			},
+			{
+				"name": "hire_date",
+				"type": "String"
+			}
+		]
+	}
+}
