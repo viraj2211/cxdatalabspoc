@@ -1,0 +1,48 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "emp_data_csv",
+						"type": "DatasetReference"
+					},
+					"name": "empdatacsv"
+				},
+				{
+					"name": "deptdataparquet"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "cast1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          emp_id as string,",
+				"          emp_name as string,",
+				"          job_role as string,",
+				"          salary as string,",
+				"          dept_id as string,",
+				"          hire_date as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> empdatacsv",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> deptdataparquet",
+				"empdatacsv cast(output(",
+				"          emp_id as integer,",
+				"          salary as double,",
+				"          dept_id as integer,",
+				"          hire_date as date",
+				"     ),",
+				"     errors: true) ~> cast1"
+			]
+		}
+	}
+}
