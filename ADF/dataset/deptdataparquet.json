@@ -1,0 +1,33 @@
+{
+	"name": "deptdataparquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dept_data_parquet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "poc/dept_data_parquet",
+				"fileSystem": "cxdatalabspoc"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "dept_id",
+				"type": "INT32"
+			},
+			{
+				"name": "dept_name",
+				"type": "UTF8"
+			},
+			{
+				"name": "mgr_emp_id",
+				"type": "INT32"
+			}
+		]
+	}
+}
