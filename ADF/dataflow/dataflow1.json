@@ -48,7 +48,7 @@
 				"          Index =  !isNull(trim(Index)) && trim(Index) != ''\r",
 				") ~> derivedColumn1",
 				"derivedColumn1 aggregate(groupBy({Job Title}),",
-				"     {First Name} = ERROR_FUNCTION('first(First Name)')) ~> aggregate1",
+				"     {First Name} = first({First Name})) ~> aggregate1",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
