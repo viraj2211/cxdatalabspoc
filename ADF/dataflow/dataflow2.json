@@ -37,6 +37,9 @@
 				},
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "filter1"
 				}
 			],
 			"scriptLines": [
@@ -71,8 +74,9 @@
 				"          emp_id as integer '000'",
 				"     ),",
 				"     errors: true) ~> cast1",
-				"source1 derive(job_role = iif(isNull(job_role) || trim(job_role) == '', 'Unknown', job_role)\r",
+				"filter1 derive(job_role = iif(isNull(job_role) || trim(job_role) == '', 'Unknown', job_role)\r",
 				") ~> derivedColumn1",
+				"source1 filter(emp_id!='emp_id') ~> filter1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
