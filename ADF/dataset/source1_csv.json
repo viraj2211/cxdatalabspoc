@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "business-operations-survey-2023-business-operations.csv",
+				"fileName": "people-100.csv",
 				"folderPath": "poc",
 				"fileSystem": "cxdatalabspoc"
 			},
