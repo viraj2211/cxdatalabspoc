@@ -21,39 +21,39 @@
 		},
 		"schema": [
 			{
-				"name": "description",
+				"name": "Index",
 				"type": "String"
 			},
 			{
-				"name": "industry",
+				"name": "User Id",
 				"type": "String"
 			},
 			{
-				"name": "level",
+				"name": "First Name",
 				"type": "String"
 			},
 			{
-				"name": "size",
+				"name": "Last Name",
 				"type": "String"
 			},
 			{
-				"name": "line_code",
+				"name": "Sex",
 				"type": "String"
 			},
 			{
-				"name": "value",
+				"name": "Email",
 				"type": "String"
 			},
 			{
-				"name": "status",
+				"name": "Phone",
 				"type": "String"
 			},
 			{
-				"name": "Unit",
+				"name": "Date of birth",
 				"type": "String"
 			},
 			{
-				"name": "Footnotes",
+				"name": "Job Title",
 				"type": "String"
 			}
 		]
