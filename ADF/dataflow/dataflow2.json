@@ -34,6 +34,9 @@
 				},
 				{
 					"name": "cast1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -64,10 +67,12 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"source1 cast(output(",
+				"derivedColumn1 cast(output(",
 				"          emp_id as integer '000'",
 				"     ),",
 				"     errors: true) ~> cast1",
+				"source1 derive(job_role = iif(isNull(job_role) || trim(job_role) == '', 'Unknown', job_role)\r",
+				") ~> derivedColumn1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
