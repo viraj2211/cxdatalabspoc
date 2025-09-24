@@ -21,6 +21,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -66,6 +70,20 @@
 				"     errors: true) ~> cast1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          description as string,",
+				"          industry as string,",
+				"          level as string,",
+				"          size as string,",
+				"          line_code as string,",
+				"          value as string,",
+				"          status as string,",
+				"          Unit as string,",
+				"          Footnotes as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
