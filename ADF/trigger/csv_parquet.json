@@ -1,0 +1,17 @@
+{
+	"name": "csv_parquet",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2025-09-24T15:33:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
