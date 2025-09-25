@@ -1,0 +1,20 @@
+{
+	"name": "target_adls_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "target_adls_parquet1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "rawfile",
+				"fileSystem": "cxdata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
