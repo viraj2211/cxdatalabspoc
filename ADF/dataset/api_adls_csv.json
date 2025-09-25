@@ -1,0 +1,12 @@
+{
+	"name": "api_adls_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "myapi_csv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
