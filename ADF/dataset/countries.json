@@ -19,6 +19,11 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Job Status",
+				"type": "String"
+			}
+		]
 	}
 }
