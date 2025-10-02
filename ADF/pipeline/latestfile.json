@@ -83,8 +83,8 @@
 				}
 			},
 			{
-				"name": "Filter1",
-				"type": "Filter",
+				"name": "Set variable1",
+				"type": "SetVariable",
 				"dependsOn": [
 					{
 						"activity": "ForEach1",
@@ -93,12 +93,54 @@
 						]
 					}
 				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"condition": {
-						"value": "@greater(item().lastModified, variables('LatestTimestamp'))",
+					"variableName": "LatestFileName",
+					"value": "@activity('GetMetadata1_File').output.lastModified"
+				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greater(\n    ticks(variables('CurrentFileModified')), \n    if(equals(variables('LatestTimestamp'), ''), 0, ticks(variables('LatestTimestamp')))\n)\n",
 						"type": "Expression"
 					}
+				}
+			},
+			{
+				"name": "Set variable2",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "If Condition1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "LatestFileName",
+					"value": "@item().name"
 				}
 			},
 			{
@@ -106,7 +148,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Filter1",
+						"activity": "Set variable2",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -126,6 +168,11 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "inputdata",
+							"wildcardFileName": {
+								"value": "*",
+								"type": "Expression"
+							},
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -167,6 +214,17 @@
 				]
 			}
 		],
+		"variables": {
+			"LatestFileName": {
+				"type": "String"
+			},
+			"LatestTimestamp": {
+				"type": "String"
+			},
+			"CurrentFileModified": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
