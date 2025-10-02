@@ -32,7 +32,7 @@
 				"     purgeFiles: true) ~> source1",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['@concat(toString(country), \\'.csv\\')'],",
+				"     partitionFileNames:[(@concat(toString(Job Status), '.csv'))],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
