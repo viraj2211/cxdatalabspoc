@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "job_status.csv",
 				"folderPath": "inputdata",
 				"fileSystem": "cxdata"
 			},
