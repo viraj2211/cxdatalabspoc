@@ -15,7 +15,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@dataset().FileName",
 				"folderPath": "inputdata",
 				"fileSystem": "cxdata"
 			},
