@@ -41,7 +41,7 @@
 				"source1 aggregate(groupBy(ID,",
 				"          NAME),",
 				"     column1 = collect(SKILLS)) ~> aggregate1",
-				"aggregate1 derive(column1 = replace(replace(replace(replace(toString(column1),'\"', ''),'{', ''),'}', ''),',', '' )) ~> derivedColumn1",
+				"aggregate1 derive(column1 = replace(replace(replace(replace(toString(column1),'\"', ''),'[', ''),']', ''),',', '' )) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
