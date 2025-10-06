@@ -67,12 +67,6 @@
 								"dataflow": {
 									"referenceName": "dataflow4",
 									"type": "DataFlowReference",
-									"parameters": {
-										"NAME": {
-											"value": "'@{item().NAME}'",
-											"type": "Expression"
-										}
-									},
 									"datasetParameters": {
 										"sink1": {
 											"TargetFilename": {
