@@ -1,0 +1,49 @@
+{
+	"name": "Jobdetails",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Jobdetails",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "jobdetails.csv",
+				"folderPath": "inputdata",
+				"fileSystem": "cxdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "D.O.B",
+				"type": "String"
+			},
+			{
+				"name": "JobStatus",
+				"type": "String"
+			},
+			{
+				"name": "Marital Status",
+				"type": "String"
+			},
+			{
+				"name": "Code",
+				"type": "String"
+			}
+		]
+	}
+}
