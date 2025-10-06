@@ -1,0 +1,43 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Excel",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"SheetNmae": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "STAFF.xlsx",
+				"folderPath": "inputdata",
+				"fileSystem": "cxdata"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "D.O.B",
+				"type": "String"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "String"
+			}
+		]
+	}
+}
