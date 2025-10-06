@@ -109,7 +109,13 @@
 							"outputs": [
 								{
 									"referenceName": "latestfile_targetcsv",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"TargetFileName": {
+											"value": "@concat(item().SheetName, '.csv')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
