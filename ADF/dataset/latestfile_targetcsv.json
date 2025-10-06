@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "multiplefilesdata.csv",
+				"fileName": "@{item().SheetName}.csv",
 				"folderPath": "rawfile",
 				"fileSystem": "cxdata"
 			},
