@@ -1,0 +1,29 @@
+{
+	"name": "config",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MultipleExcelSheets",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Config.txt",
+				"folderPath": "inputdata",
+				"fileSystem": "cxdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SheetName",
+				"type": "String"
+			}
+		]
+	}
+}
