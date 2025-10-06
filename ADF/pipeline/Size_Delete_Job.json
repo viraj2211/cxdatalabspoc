@@ -63,11 +63,11 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "DelimitedText1",
+									"referenceName": "sizefile",
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
-											"value": "@item().FileName",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
