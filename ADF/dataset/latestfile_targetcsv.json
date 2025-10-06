@@ -5,6 +5,11 @@
 			"referenceName": "latestfile_targetcsv",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TargetFileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
