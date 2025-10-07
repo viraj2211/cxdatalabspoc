@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -78,6 +79,7 @@
 								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -210,7 +212,10 @@
 				"outputs": [
 					{
 						"referenceName": "latestfile_targetcsv",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TargetFileName": "item().SheetName"
+						}
 					}
 				]
 			}
