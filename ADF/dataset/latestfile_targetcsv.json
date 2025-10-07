@@ -8,6 +8,9 @@
 		"parameters": {
 			"TargetFileName": {
 				"type": "string"
+			},
+			"Size": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -19,7 +22,10 @@
 					"value": "@dataset().TargetFileName",
 					"type": "Expression"
 				},
-				"folderPath": "rawfile",
+				"folderPath": {
+					"value": "@dataset().Size",
+					"type": "Expression"
+				},
 				"fileSystem": "cxdata"
 			},
 			"columnDelimiter": ",",
