@@ -214,7 +214,10 @@
 						"referenceName": "latestfile_targetcsv",
 						"type": "DatasetReference",
 						"parameters": {
-							"TargetFileName": "item().SheetName"
+							"TargetFileName": {
+								"value": "@variables('FileName')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
