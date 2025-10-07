@@ -19,7 +19,7 @@
 					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
-				"folderPath": "rawdata",
+				"folderPath": "rawfile",
 				"fileSystem": "cxdata"
 			},
 			"columnDelimiter": ",",
