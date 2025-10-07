@@ -1,0 +1,36 @@
+{
+	"name": "Target_multplecsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Target_multiplecsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "100B",
+				"fileSystem": "cxdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "column1",
+				"type": "String"
+			}
+		]
+	}
+}

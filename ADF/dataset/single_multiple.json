@@ -1,0 +1,37 @@
+{
+	"name": "single_multiple",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "single_multiple",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "part-00000-3b86c647-a087-43e4-9cd7-1d1feb575244-c000.csv",
+				"folderPath": "100B",
+				"fileSystem": "cxdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "column1",
+				"type": "String"
+			}
+		]
+	}
+}
