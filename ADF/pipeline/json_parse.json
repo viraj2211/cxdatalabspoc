@@ -1,0 +1,160 @@
+{
+	"name": "json_parse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['PassengerId']"
+								},
+								"sink": {
+									"name": "PassengerId"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Survived']"
+								},
+								"sink": {
+									"name": "Survived"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Pclass']"
+								},
+								"sink": {
+									"name": "Pclass"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Name']"
+								},
+								"sink": {
+									"name": "Name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Sex']"
+								},
+								"sink": {
+									"name": "Sex"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Age']"
+								},
+								"sink": {
+									"name": "Age"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SibSp']"
+								},
+								"sink": {
+									"name": "SibSp"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Parch']"
+								},
+								"sink": {
+									"name": "Parch"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Ticket']"
+								},
+								"sink": {
+									"name": "Ticket"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Fare']"
+								},
+								"sink": {
+									"name": "Fare"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Cabin']"
+								},
+								"sink": {
+									"name": "Cabin",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Embarked']"
+								},
+								"sink": {
+									"name": "Embarked"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Json_flatten",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "json_csv",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

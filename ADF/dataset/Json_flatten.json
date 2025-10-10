@@ -1,0 +1,60 @@
+{
+	"name": "Json_flatten",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "json_parse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "titanic-parquet.json",
+				"folderPath": "rawfile",
+				"fileSystem": "cxdata"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"PassengerId": {
+					"type": "string"
+				},
+				"Survived": {
+					"type": "string"
+				},
+				"Pclass": {
+					"type": "string"
+				},
+				"Name": {
+					"type": "string"
+				},
+				"Sex": {
+					"type": "string"
+				},
+				"Age": {
+					"type": "integer"
+				},
+				"SibSp": {
+					"type": "string"
+				},
+				"Parch": {
+					"type": "string"
+				},
+				"Ticket": {
+					"type": "string"
+				},
+				"Fare": {
+					"type": "number"
+				},
+				"Cabin": {
+					"type": "string"
+				},
+				"Embarked": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
