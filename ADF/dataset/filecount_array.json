@@ -1,0 +1,30 @@
+{
+	"name": "filecount_array",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "foldercount_array",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			},
+			"foldername": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().foldername",
+					"type": "Expression"
+				},
+				"fileSystem": "cxdata"
+			}
+		},
+		"schema": {}
+	}
+}
