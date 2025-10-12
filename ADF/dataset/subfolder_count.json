@@ -1,0 +1,44 @@
+{
+	"name": "subfolder_count",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "subfolder_count",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"subfolder_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().subfolder_name",
+					"type": "Expression"
+				},
+				"fileSystem": "cxdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "column1",
+				"type": "String"
+			}
+		]
+	}
+}
