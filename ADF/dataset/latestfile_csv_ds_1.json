@@ -1,0 +1,45 @@
+{
+	"name": "latestfile_csv_ds_1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "latestfile_csv_ls1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": "100B",
+				"fileSystem": "cxdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "column1",
+				"type": "String"
+			}
+		]
+	}
+}
