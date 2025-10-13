@@ -5,11 +5,6 @@
 			"referenceName": "latestfile_ls_output",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"filename": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
