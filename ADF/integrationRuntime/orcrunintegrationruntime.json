@@ -1,0 +1,6 @@
+{
+	"name": "orcrunintegrationruntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
