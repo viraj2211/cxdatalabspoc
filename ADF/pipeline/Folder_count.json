@@ -116,6 +116,9 @@
 			},
 			"folder_name": {
 				"type": "Array"
+			},
+			"Temp_count": {
+				"type": "Integer"
 			}
 		},
 		"annotations": []
