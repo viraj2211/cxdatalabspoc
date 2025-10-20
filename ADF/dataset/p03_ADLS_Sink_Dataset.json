@@ -1,0 +1,33 @@
+{
+	"name": "p03_ADLS_Sink_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_Sink_Dataset",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sinkPath": {
+				"type": "string"
+			},
+			"fileFormat": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@dataset().sinkPath",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
