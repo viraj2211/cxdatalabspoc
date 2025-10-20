@@ -5,8 +5,19 @@
 			"referenceName": "Oracle1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "OracleTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
 	}
 }
