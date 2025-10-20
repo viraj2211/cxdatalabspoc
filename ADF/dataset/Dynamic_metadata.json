@@ -1,0 +1,16 @@
+{
+	"name": "Dynamic_metadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Oracle2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": ""
+		}
+	}
+}
