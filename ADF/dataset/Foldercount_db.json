@@ -1,0 +1,12 @@
+{
+	"name": "Foldercount_db",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FolderCount_oracle",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": []
+	}
+}
