@@ -14,9 +14,9 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "latestfile_csv_output",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "P04",
+						"type": "LinkedServiceReference"
 					},
 					"name": "sink1"
 				}
@@ -24,7 +24,7 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1",
-					"description": "Creating/updating the columns 'ID, NAME, column1'"
+					"description": "Creating/updating the columns 'ID, NAME, SKILLS'"
 				},
 				{
 					"name": "flatten1"
@@ -39,7 +39,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(SKILLS = split(SKILLS,'|')) ~> derivedColumn1",
+				"source1 derive(SKILLS = split(SKILLS,',')) ~> derivedColumn1",
 				"derivedColumn1 foldDown(unroll(SKILLS, SKILLS),",
 				"     mapColumn(",
 				"          ID,",
@@ -50,6 +50,13 @@
 				"     skipDuplicateMapOutputs: false) ~> flatten1",
 				"flatten1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'delimited',",
+				"     fileSystem: 'cxdata',",
+				"     folderPath: 'output',",
+				"     columnDelimiter: ';',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: true,",
 				"     partitionFileNames:['po4output.csv'],",
 				"     umask: 0022,",
 				"     preCommands: [],",
