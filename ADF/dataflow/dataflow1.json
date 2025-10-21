@@ -23,7 +23,8 @@
 			],
 			"transformations": [
 				{
-					"name": "derivedColumn1"
+					"name": "derivedColumn1",
+					"description": "Creating/updating the columns 'ID, NAME, column1'"
 				},
 				{
 					"name": "flatten1"
@@ -31,9 +32,9 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          ID as string,",
+				"          ID as short,",
 				"          NAME as string,",
-				"          column1 as string",
+				"          SKILLS as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
