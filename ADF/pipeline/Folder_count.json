@@ -53,6 +53,8 @@
 						{
 							"name": "Get Metadata2",
 							"type": "GetMetadata",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -87,23 +89,46 @@
 							}
 						},
 						{
-							"name": "Append variable1",
-							"type": "AppendVariable",
-							"dependsOn": [
-								{
-									"activity": "Get Metadata2",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"name": "Script1",
+							"type": "Script",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
 							"userProperties": [],
+							"linkedServiceName": {
+								"referenceName": "FolderCount_oracle",
+								"type": "LinkedServiceReference"
+							},
 							"typeProperties": {
-								"variableName": "folder_name",
-								"value": {
-									"value": "@json(concat(\n    '{\"FolderName\":\"', \n    item().name, \n    '\",\"TotalCount\":', \n    string(length(coalesce(activity('Get Metadata2').output.childItems, json('[]')))), \n    '}'\n))\n\n",
-									"type": "Expression"
-								}
+								"scripts": [
+									{
+										"parameters": [
+											{
+												"name": "p_FolderName",
+												"type": "String",
+												"value": "@item().name",
+												"direction": "Input"
+											},
+											{
+												"name": "p_FileCount",
+												"type": "Int16",
+												"value": "@activity('GetFiles').output.childItemsCount",
+												"direction": "Input"
+											}
+										],
+										"type": "Query",
+										"text": {
+											"value": "BEGIN\n  SPFileCountInfo(:p_FolderName, :p_FileCount);\nEND;",
+											"type": "Expression"
+										}
+									}
+								],
+								"scriptBlockExecutionTimeout": "02:00:00"
 							}
 						}
 					]
